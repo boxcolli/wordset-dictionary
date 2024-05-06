@@ -1,3 +1,19 @@
+Data
+====
+```json
+{ pos: 'adverb', count: 5571 }
+{ pos: 'adjective', count: 29743 }
+{ pos: 'noun', count: 103037 }
+{ pos: 'verb', count: 24868 }
+{ pos: 'article', count: 1 }
+{ pos: 'preposition', count: 5 }
+{ pos: 'phrase', count: 20 }
+{ pos: 'interjection', count: 8 }
+{ pos: 'pronoun', count: 15 }
+```
+
+
+
 Wordset Dictionary
 ==================
 

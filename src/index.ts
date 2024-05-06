@@ -1,13 +1,5 @@
-import { sortByPos } from "./sort"
+import * as fs from 'fs'
 import { readData, readSet } from "./read"
-
-async function runSingleFile(table: any, filePath: string) {
-    const wordSet = await readData(filePath)
-
-    const extract = readSet(wordSet)
-
-    sortByPos(table, extract)
-}
 
 void async function run() {
     const alphas = 'abcdefghijklmnopqrstuvwxyz'.split('')
@@ -36,5 +28,15 @@ void async function run() {
     // Result
     for (const pos in table) {
         console.log({ pos: pos, count: table[pos].length })
+
+        const fileName = `./pos/${pos}.json`
+
+        fs.writeFile(fileName, JSON.stringify({ words: table[pos] }), { flag: 'w' }, (err) => {
+            if (err) {
+                console.error({ fileName: fileName, error: err})
+            } else {
+                console.log({ success: fileName})
+            }
+        })
     }
 } ()
