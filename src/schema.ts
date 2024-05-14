@@ -1,7 +1,14 @@
 /**
- * Original data: WordSet -> WordData -> WordMeaning
- * Custom schema: WordExtract
+ *  Original data: WordSet -> WordData -> WordMeaning
+ *  Custom schema: WordExtract
  */
+export type WordSet = { [key: string]: WordData }
+
+export interface WordData {
+    word: string
+    wordset_id: string
+    meanings?: WordMeaning[]
+}
 
 export interface WordMeaning {
     id: string
@@ -10,14 +17,6 @@ export interface WordMeaning {
     speech_part: string
     synonyms: string[]
 }
-
-export interface WordData {
-    word: string
-    wordset_id: string
-    meanings?: WordMeaning[]
-}
-
-export type WordSet = { [key: string]: WordData }
 
 export interface WordExtract {
     word: string

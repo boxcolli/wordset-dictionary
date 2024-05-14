@@ -3,6 +3,11 @@ import { resolve } from 'path'
 
 import { WordData, WordExtract, WordSet } from "./schema";
 
+/**
+ * 
+ * @param wordSet 
+ * @returns 
+ */
 export function readSet(wordSet: WordSet): WordExtract[] {
     const extract: WordExtract[] = []
 
